@@ -1,19 +1,19 @@
 # opener
 
-Claude Code skill to open the current project directory in various applications and services.
+現在のプロジェクトディレクトリを、さまざまなアプリケーションやサービスで開く Claude Code スキルです。
 
-## Targets
+## ターゲット一覧
 
-| Target | Description |
-|--------|-------------|
-| `finder` | Open in Finder |
-| `vscode` | Open in VS Code |
-| `terminal` | Open in Terminal.app |
-| `github` | Open GitHub repository page |
-| `vercel` | Open Vercel dashboard |
-| `pr` | Open current branch's Pull Request |
+| ターゲット | 説明 |
+|-----------|------|
+| `finder` | Finder で開く |
+| `vscode` | VS Code で開く |
+| `terminal` | Terminal.app で開く |
+| `github` | GitHub リポジトリページを開く |
+| `vercel` | Vercel ダッシュボードを開く |
+| `pr` | 現在のブランチの Pull Request ページを開く |
 
-## Usage
+## 使い方
 
 ```
 /opener finder
@@ -21,23 +21,23 @@ Claude Code skill to open the current project directory in various applications 
 /opener pr
 ```
 
-Running `/opener` without arguments displays the available targets.
+引数なしで `/opener` を実行すると、利用可能なターゲット一覧が表示されます。
 
-## Requirements
+## 必要なツール
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- [GitHub CLI (`gh`)](https://cli.github.com/) — required for `github` and `pr` targets
-- [VS Code CLI (`code`)](https://code.visualstudio.com/) — required for `vscode` target
+- [GitHub CLI (`gh`)](https://cli.github.com/) — `github`・`pr` ターゲットに必要
+- [VS Code CLI (`code`)](https://code.visualstudio.com/) — `vscode` ターゲットに必要
 
-## Installation
+## インストール
 
-Copy `SKILL.md` to your Claude Code skills directory:
+`SKILL.md` を Claude Code のスキルディレクトリにコピーしてください：
 
 ```bash
 mkdir -p ~/.claude/skills/opener
 cp SKILL.md ~/.claude/skills/opener/
 ```
 
-## License
+## ライセンス
 
 MIT
