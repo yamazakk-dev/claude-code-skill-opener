@@ -1,7 +1,7 @@
 ---
 name: opener
-description: 現在のプロジェクトをFinder、VSCode、Terminal、GitHub、Vercelなどで開く
-argument-hint: "<finder|vscode|terminal|github|vercel|pr>"
+description: 現在のプロジェクトをFinder、VSCode、Terminal、GitHub、Vercel、Supabaseなどで開く
+argument-hint: "<finder|vscode|terminal|github|vercel|supabase|pr>"
 allowed-tools: Bash
 ---
 
@@ -49,6 +49,18 @@ open "https://vercel.com/~/projects/<projectId>"
 ```
 ※ `<projectId>` は実際の値に置き換える。
 
+### `supabase`
+Supabaseダッシュボードのプロジェクトページを開く。
+
+1. `supabase/.temp/project-ref` が存在するか確認する
+2. 存在しない場合は「このプロジェクトにはSupabaseの設定がありません（supabase/.temp/project-ref が見つかりません。`supabase link` を実行してください）」と表示して終了
+3. 存在する場合、ファイルからプロジェクト参照IDを読み取る
+4. 以下のコマンドでブラウザを開く：
+```bash
+open "https://supabase.com/dashboard/project/<project-ref>"
+```
+※ `<project-ref>` は実際の値に置き換える。
+
 ### `pr`
 現在のブランチのPull Requestページをブラウザで開く。
 ```bash
@@ -66,6 +78,7 @@ gh pr view --web
   terminal - Terminal.appで開く
   github   - GitHubリポジトリページを開く
   vercel   - Vercelダッシュボードを開く
+  supabase - Supabaseダッシュボードを開く
   pr       - 現在のブランチのPRページを開く
 
 使い方: /opener <target>
